@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button} from './Button'
+import { Button } from './Button'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import Dropdown from './Dropdown'
@@ -63,7 +63,9 @@ function Navbar() {
                     </Link>
                 </li> 
             </ul>
-            <Button/>
+            <Link to='/download' className='btn-link'>
+                    <Button buttonStyle='btn--outline'>Download GunMA</Button>
+                  </Link>
         </nav>
         </>
     );
