@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 
-            <a className="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <Link className="navbar-brand ps-3" to="/admin">Start Bootstrap</Link>
 
             <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i className="fas fa-bars"></i></button>
 
@@ -19,10 +19,10 @@ const Navbar = () => {
                 <li className="nav-item dropdown">
                     <Link to="#"  className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="fas fa-user fa-fw"></i></Link>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a className="dropdown-item" href="#!">Settings</a></li>
-                        <li><a className="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><Link className="dropdown-item" href="#!">Settings</Link></li>
+                        <li><Link className="dropdown-item" href="#!">Activity Log</Link></li>
                         <li><hr className="dropdown-divider" /></li>
-                        <li><a className="dropdown-item" href="#!">Logout</a></li>
+                        <li><Link className="dropdown-item" href="#!">Logout</Link></li>
                     </ul>
                 </li>
             </ul>
