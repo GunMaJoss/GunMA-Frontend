@@ -1,6 +1,9 @@
 import React from 'react';
+import '../../assets/admin/css/styles.css';
+import '../../assets/admin/js/scripts';
+
 import Navbar from './Navbar';
-import Sidebar from '/Sidebar';
+import Sidebar from './Sidebar';
 import Footer from './Footer';
 
 const MasterLayout = () => {

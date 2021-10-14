@@ -31,4 +31,4 @@ const Navbar = () => {
 
 }
 
-export default MasterLayout;
+export default Navbar;
