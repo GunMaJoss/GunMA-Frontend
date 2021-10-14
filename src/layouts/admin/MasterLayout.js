@@ -16,7 +16,7 @@ const MasterLayout = () => {
                     <Sidebar />
                 </div>
                 <div id="layoutSidenav_content">
-                    <main></main>
+                    <main>Master File</main>
                     <Footer />
                 </div>
             </div>
