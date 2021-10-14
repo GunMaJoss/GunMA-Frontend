@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MasterLayout from './layouts/admin/MasterLayout';
+import Home from './components/frontend/Home';
+
 
 function App() {
   return (
@@ -8,8 +10,9 @@ function App() {
       <Router>
 
         <Switch>
-          <Route path="/admin/dashboard" component={MasterLayout} /> 
-          </Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/admin" name="Admin" render={(props) => <MasterLayout {...props} />} />
+        </Switch>
 
 
       </Router>
