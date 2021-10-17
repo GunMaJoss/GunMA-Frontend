@@ -1,143 +1,80 @@
 import React, { useState } from 'react'
+import { Alert } from 'reactstrap';
 import Admin from 'layouts/Admin';
-
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Row,
-  Col,
-} from "reactstrap";
 
 function Login() {
 
-  const [emaillog, setEmaillog] = useState(" ");
-  const [passwordlog, setPasswordlog] = useState(" ");
+    const [emaillog, setEmaillog] = useState(" ");
+    const [passwordlog, setPasswordlog] = useState(" ");
 
-  const [flag, setFlag] = useState(false);
-
-  const [admin, setAdmin] = useState(true);
-
-
-  function handleLogin(e) {
-      e.preventDefault();
-      let pass = localStorage.getItem('Password').replace(/"/g, "");
-      let mail = localStorage.getItem('Email').replace(/"/g, "");
-      // .replace(/"/g,"") is used to remove the double quotes for the string
-
-      if (!emaillog || !passwordlog) {
-          setFlag(true);
-          console.log("EMPTY");
-      } else if ((passwordlog !== pass) || (emaillog !== mail)) {
-          setFlag(true);
-      } else {
-          setAdmin(!admin);
-          setFlag(false);
-      }
-  }
+    const [flag, setFlag] = useState(false);
+    const [admin, setAdmin] = useState(true);
 
 
-  return (
-    <div>
-    {admin ? <form onSubmit={handleLogin}>
-  
-        <Card className="bg-secondary shadow border-0">
-          <CardHeader className="bg-transparent pb-5">
-            <div className="text-muted text-center mt-2 mb-3">
-              <small>Sign in with</small>
-            </div>
-            <div className="btn-wrapper text-center">
-             
-            </div>
-          </CardHeader>
-          <CardBody className="px-lg-5 py-lg-5">
-            <div className="text-center text-muted mb-4">
-              <small>Or sign in with credentials</small>
-            </div>
-            <Form role="form">
-              <FormGroup className="mb-3">
-                <InputGroup className="input-group-alternative">
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="ni ni-email-83" />
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Input
-                    placeholder="Email"
-                    type="email"
-                    autoComplete="new-email"
-                    onChange={(event) => setEmaillog(event.target.value)}
-                  />
-                </InputGroup>
-              </FormGroup>
-              <FormGroup>
-                <InputGroup className="input-group-alternative">
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="ni ni-lock-circle-open" />
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Input
-                    placeholder="Password"
-                    type="password"
-                    autoComplete="new-password"
-                    placeholder="Enter password" onChange={(event) => setPasswordlog(event.target.value)}
-                  />
-                </InputGroup>
-              </FormGroup>
-              <div className="custom-control custom-control-alternative custom-checkbox">
-                <input
-                  className="custom-control-input"
-                  id=" customCheckLogin"
-                  type="checkbox"
-                />
-                <label
-                  className="custom-control-label"
-                  htmlFor=" customCheckLogin"
-                >
-                  <span className="text-muted">Remember me</span>
-                </label>
-              </div>
-              <div className="text-center">
-                <Button className="my-4" color="primary" type="submit">
-                  Sign in
-                </Button>
-              </div>
-            </Form>
-          </CardBody>
-        </Card>
-        <Row className="mt-3">
-          <Col xs="6">
-            <a
-              className="text-light"
-              href="#pablo"
-              onClick={(e) => e.preventDefault()}
-            >
-              <small>Forgot password?</small>
-            </a>
-          </Col>
-          <Col className="text-right" xs="6">
-            <a
-              className="text-light"
-              href="#pablo"
-              onClick={(e) => e.preventDefault()}
-            >
-              <small>Create new account</small>
-            </a>
-          </Col>
-        </Row>
-      
-      </form>:<Admin/>}
-    
-    </div>
-  );
-}
+    function handleLogin(e) {
+        e.preventDefault();
+        let pass = localStorage.getItem('Password').replace(/"/g, "");
+        let mail = localStorage.getItem('Email').replace(/"/g, "");
+        // .replace(/"/g,"") is used to remove the double quotes for the string
 
-export default Login
+        if (!emaillog || !passwordlog) {
+            setFlag(true);
+            console.log("EMPTY");
+        } else if ((passwordlog !== pass) || (emaillog !== mail)) {
+            setFlag(true);
+        } else {
+            setAdmin(!Admin);
+            setFlag(false);
+        }
+    }
+
+
+    return ( <
+        div > {
+            admin ? < form onSubmit = { handleLogin } >
+            <
+            h3 > Login < /h3> <
+            h1 > sss < /h1> <
+            h1 > sss < /h1> <
+            div className = "form-group" >
+            <
+            label > Email < /label> <
+            input type = "email"
+            className = "form-control"
+            placeholder = "Enter email"
+            onChange = {
+                (event) => setEmaillog(event.target.value) }
+            /> <
+            /div>
+
+            <
+            div className = "form-group" >
+            <
+            label > Password < /label> <
+            input type = "password"
+            className = "form-control"
+            placeholder = "Enter password"
+            onChange = {
+                (event) => setPasswordlog(event.target.value) }
+            /> <
+            /div>
+
+            <
+            button type = "submit"
+            className = "btn btn-dark btn-lg btn-block" > Login < /button>
+
+            {
+                flag && < Alert color = 'primary'
+                variant = "warning" >
+                    Fill correct Info
+                else keep trying. <
+                    /Alert>} <
+                    /form> : <Admin / >
+            }
+
+            <
+            /div>
+        )
+    }
+
+    export default Login
