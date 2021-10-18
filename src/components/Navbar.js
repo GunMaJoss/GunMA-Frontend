@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button} from './Button'
+import { Button } from './Button'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import Dropdown from './Dropdown'
@@ -30,11 +30,10 @@ function Navbar() {
 
     return (
         <>
-        <nav className='navbar'>
+      <nav className='navbar'>
             <nav to='/' className='navbar-logo'>
-
-            <img src="logogunma2.png"></img>
-
+            <img src="logo5.png"></img>
+    
             </nav>
             <div className = 'menu-icon' onClick = {handleClick}>
                 <i className ={click ? 'fas fa-times' : 'fas fa-bars'}
@@ -63,7 +62,9 @@ function Navbar() {
                     </Link>
                 </li> 
             </ul>
-            <Button/>
+            <Link to='/download' className='btn-link'>
+                    <Button buttonStyle='btn--outline'>Download GunMA</Button>
+                  </Link>
         </nav>
         </>
     );

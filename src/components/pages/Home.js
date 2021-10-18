@@ -1,9 +1,12 @@
 import React from 'react'
+import FilterSection from '../DashboardSection';
+import { homeObjThree} from './DataHome';
 
-export default function Home(){
+function Home(){
     return (
         <>
-        <h1 className='home'></h1>
+        <FilterSection {...homeObjThree} />
         </>
     )
 }
+export default Home;
