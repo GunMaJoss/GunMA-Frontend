@@ -7,6 +7,6 @@ export const homeObjThree = {
       'Gunma is a platform for information seekers regarding internships spread throughout Indonesia. GunMa provides accurate and precise information regarding internships',
     imgStart: '',
     buttonLabel: 'Find It Now',
-    img: '1.jpg',
+    img: '1.JPG',
     alt: 'bg'
   };
