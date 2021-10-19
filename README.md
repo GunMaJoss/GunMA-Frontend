@@ -5,7 +5,7 @@ Di sprint 1, dari kelompok GunMA punya sprint goal:
 1. MVP login
 2. MVP regis
 
--Landing Page
+- Landing Page
 1.  Navbar+dropdown
 2.  Footer
 3.  Fitur personalisasi.
