@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button} from './Button'
+import React, { useState, useEffect } from 'react'
+import { Button } from './Button'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import Dropdown from './Dropdown'
@@ -8,7 +8,8 @@ import Dropdown from './Dropdown'
 function Navbar() {
     const [click,setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
-
+    const [button, setButton] = useState(true);
+    
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -28,14 +29,28 @@ function Navbar() {
         }
     };
 
+
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+          setButton(false);
+        } else {
+          setButton(true);
+        }
+      };
+    
+      useEffect(() => {
+        showButton();
+      }, []);
+    
+      window.addEventListener('resize', showButton);
+
     return (
         <>
-        <nav className='navbar'>
-            <nav to='/' className='navbar-logo'>
-
-            <img src="logogunma2.png"></img>
-
-            </nav>
+      <nav className='navbar'>
+            <Link to='/' className='navbar-logo'>
+            <img src="images/logo5.png"></img>
+    
+            </Link>
             <div className = 'menu-icon' onClick = {handleClick}>
                 <i className ={click ? 'fas fa-times' : 'fas fa-bars'}
                 />
@@ -51,7 +66,7 @@ function Navbar() {
                 onMouseEnter = {onMouseEnter}
                 onMouseLeave = {onMouseLeave}
                 >
-                    <Link to='/fitur' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                         Fitur <i className = 'fas fa-caret-down'/>
                     </Link>
                     {dropdown && <Dropdown/>}
@@ -63,7 +78,9 @@ function Navbar() {
                     </Link>
                 </li> 
             </ul>
-            <Button/>
+            <Link to='/' className='btn-link'>
+                    <Button buttonStyle='btn--outline'>Sign In</Button>
+                  </Link>
         </nav>
         </>
     );
