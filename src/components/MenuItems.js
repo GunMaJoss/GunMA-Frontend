@@ -1,31 +1,31 @@
 export const MenuItems = [
     {
-        title: 'Fitur Personalisasi',
+        title: 'Personalization Features',
         path: '/personalisasi',
         cName : 'dropdown-Link'
     },
     {
-        title: 'Fitur Bookmark',
+        title: 'Bookmarks Features',
         path: '/bookmark',
         cName : 'dropdown-Link'
     },
     {
-        title: 'Fitur Shortcut',
+        title: 'Shortcut Features',
         path: '/shortcut',
         cName : 'dropdown-Link'
     },
     {
-        title: 'Fitur Informasi Magang',
+        title: 'Internship Information Features',
         path: '/informasi',
         cName : 'dropdown-Link'
     },
     {
-        title: 'Fitur Notifikasi',
+        title: 'Notification Features',
         path: '/notifikasi',
         cName : 'dropdown-Link'
     },
     {
-        title: 'Fitur Filter',
+        title: 'Filter Features',
         path: '/filter',
         cName : 'dropdown-Link'
     },

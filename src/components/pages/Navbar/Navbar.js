@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
-import { Button} from './Button'
+import React, { useState, useEffect } from 'react'
+import { Button } from '../../Button'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import Dropdown from './Dropdown'
+import Dropdown from '../../Dropdown'
 //import {NavLink} from './images'
+import Popup from "reactjs-popup";
+import Login from '../Login'
 
 function Navbar() {
     const [click,setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
-
+    const [button, setButton] = useState(true);
+    
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -28,22 +31,36 @@ function Navbar() {
         }
     };
 
+
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+          setButton(false);
+        } else {
+          setButton(true);
+        }
+      };
+    
+      useEffect(() => {
+        showButton();
+      }, []);
+    
+      window.addEventListener('resize', showButton);
+
     return (
         <>
-        <nav className='navbar'>
-            <nav to='/' className='navbar-logo'>
-
-            <img src="logogunma2.png"></img>
-
-            </nav>
+      <nav className='navbar'>
+            <Link to='/' className='navbar-logo'>
+            <img src="images/logo5.png"></img>
+    
+            </Link>
             <div className = 'menu-icon' onClick = {handleClick}>
                 <i className ={click ? 'fas fa-times' : 'fas fa-bars'}
                 />
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
-                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                        Home 
+                    <Link to='/list' className='nav-links' onClick={closeMobileMenu}>
+                       Find Internship
                     </Link>
                 </li>
 
@@ -51,19 +68,29 @@ function Navbar() {
                 onMouseEnter = {onMouseEnter}
                 onMouseLeave = {onMouseLeave}
                 >
-                    <Link to='/fitur' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                         Fitur <i className = 'fas fa-caret-down'/>
                     </Link>
                     {dropdown && <Dropdown/>}
                 </li>
 
                 <li className='nav-item'>
+                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                        Our App
+                    </Link>
+                </li>
+               
+                <li className='nav-item'>
                     <Link to='/bantuan' className='nav-links' onClick={closeMobileMenu}>
-                        Bantuan
+                        Help 
                     </Link>
                 </li> 
             </ul>
-            <Button/>
+            <div className="PopUp">
+            <Popup modal trigger={<Button buttonStyle='btn--outline'>Sign In</Button>}>
+            {close => <Login close={close} />}
+            </Popup>
+            </div>
         </nav>
         </>
     );
