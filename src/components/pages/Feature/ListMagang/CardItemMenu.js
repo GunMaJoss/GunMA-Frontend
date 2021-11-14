@@ -15,6 +15,8 @@ function CardItemMenu(props) {
           </figure>
           <div className='card2__item__info'>
             <h5 className='card2__item__text'>{props.text}</h5>
+
+            
           </div>
         </Link>
       </li>

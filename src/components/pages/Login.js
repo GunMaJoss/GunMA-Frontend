@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
-import Popup from "reactjs-popup";
+import Popup from 'reactjs-popup';
 import Regis from './Regis';
 import styled from 'styled-components';
-
+import { useHistory } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
 
 const Section = styled.section`
   background-color: #EDEFFD;
@@ -71,36 +71,45 @@ const Button = styled.a`
   box-shadow: 0 15px 14px rgb(0 42 177 / 12%);
 `;
 
+
 function Login({close}) {
-  const setLoading = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
   const history = useHistory();
-  const setFlag = useState();
-  React.useEffect(() => {
-    if (email || password){
-      setFlag(false);
-    }
-    return () => {};
-  })
+  
+  //useEffect(() => {
+  //  if (localStorage.getItem('user-info')){
+  //    setError(false);
+  //    //history.push('/');
+  //  }
+  //  else
+  //  {
+  //    setError(error);
+  //  }
+  //  return () => {};
+  //}, [email, password])
 
-  const handleLogin = () => {
-    setLoading(true);
-    axios.post('http://api.gunma.my.id/api/login-user', { email: setEmail, password: setPassword })
-    .then(response => {
-      setLoading(false);
-      console.log('string')
-      history.push('/Home');
-    }).catch(flag => {
-      setLoading(false);
-      setFlag("Something went wrong. Please try again later.");
+  async function handleLogin () {
+    console.warn(email, password)
+    let item ={email, password};
+    let result = await fetch('http://127.0.0.1:8000/api/login', {
+        method : 'POST' ,
+        headers : {
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(item)
     });
+      result = await result.json();
+      localStorage.setItem("user-info",JSON.stringify(result))
+      history.push('/detail');
   }
 
     return ( 
+      <Alert>
+      {error && <Alert align="center" variant="danger">Salah Bro!!!</Alert>}
       <Section>
-        
-        <div > {            
+        <div> {            
           <form>
             <Right>
           <a href className="close" onClick={close}>
@@ -111,39 +120,38 @@ function Login({close}) {
           Login 
           </Title>
           <Left>
-         
             <div className = "form-group" >
-            <Label> <br/>Email : <br/>
-            </Label> 
-            <input type="email" {...setEmail} autoComplete="new-email" />
+            <Label> <br/>Email : <br/> </Label> 
+            <input type="email" 
+            placeholder="Enter email" 
+            onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className = "form-group" >
-            <LabelPas ><br/> Password : <br/> 
-            </LabelPas> 
-            
-            <input type="password" {...setPassword} autoComplete="new-password" />
+            <LabelPas ><br/> Password : <br/> </LabelPas> 
+            <input type="password"
+            placeholder="Enter password"  
+            onChange={(e) => setPassword(e.target.value)} />            
             </div>
-            
             <LeftButton>
-            <div className="PopUp">
+            <div className="Login">
             <Button type = "submit"
-            className = "btn btn-dark btn-lg btn-block" onClick={handleLogin} > Login </Button>
+            className = "btn btn-dark btn-lg btn-block"
+            onClick={handleLogin}> Login </Button>
             </div>
             </LeftButton>
-           
             <Acc>
-            <a align="center">  Don't Have Account ?
-            <Popup modal trigger={<u> Sign Up</u>}>
+            <a align="center" href>  Don't Have Account ?
+            <Popup onClick={close} modal trigger={<u> Sign Up</u>}>
             {close => <Regis close={close} />}
             </Popup>
             </a> 
             </Acc>
-
             </Left>
-            </form> 
+            </form>
             }
             </div>
             </Section>
+            </Alert>
         )
       }
 export default Login;

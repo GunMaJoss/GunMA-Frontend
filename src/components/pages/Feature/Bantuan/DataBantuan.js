@@ -7,6 +7,6 @@ export const homeObjThree = {
       'Download Aplikasi GunMA dengan klik link dibawah ini',
     imgStart: '',
     buttonLabel: 'Start Now',
-    img: 'logobantuan.png',
+    img: 'logo bantuan.png',
     alt: 'bg'
   };

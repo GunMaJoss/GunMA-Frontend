@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Login from './Login';
-import axios from 'axios';
+//import axios from 'axios';
 import Popup from "reactjs-popup";
 import styled from 'styled-components';
-import { useHistory } from 'react-router';
+//import { useHistory } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
 
 const Section = styled.section`
   background-color: #EDEFFD;
-  height: 350px;
+  height: 500px;
   width: 500px;
   display: block;
   background-repeat: no-repeat;
@@ -28,17 +28,13 @@ const Label = styled.p`
 padding-left: 60px;
 `;
 
-const LabelEmail = styled.p`
-padding-left: 60px;
-`;
-
 const LabelPas = styled.p`
 padding-left: 50px;
 `;
 
-//const LabelRePas = styled.p`
-//padding-left: 20px;
-//`;
+const LabelRePas = styled.p`
+padding-left: 5px;
+`;
 
 const Left = styled.div`
   padding-left: 165px;
@@ -80,51 +76,49 @@ const Button = styled.a`
 
 function Regis({close}) {
 
-    const history = useHistory;
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-//  const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const setAlert = useState();
+    const [password_confirmation, setPasswordConfirmation] = useState("");
+    const [error] = useState(false);
 
+    async function HandleRegister () {
 
-    const HandleRegister = async () => {
-      
-        //initialize formData
-        const formData = new FormData();
-  
-        //append data to formData
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('password', password);
-        //formData.append('password_confirmation', passwordConfirmation);
-  
-        //send data to server
-        await axios.post('http://api.gunma.my.id/api/v1/register-user', formData)
-        .then(() => {
-            //redirect to login page
-            history.push('/Login');
-        })
-        .catch((error) => {
-            setAlert("Something went wrong. Please try again later.");
-        })
-    };
+      let item = {name,email,password,password_confirmation}
+      console.warn(item);
 
-
-    return ( 
+      let result= await fetch('http://127.0.0.1:8000/api/register',{
+        method : 'POST' ,
+        headers : {
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(item)
+      })
+      result = await result.json()
+      localStorage.setItem("user-info",JSON.stringify(result))
+      }
+    return (
+      <Alert>
+      {error && <Alert align="center" variant="danger">Salah Bro!!!</Alert>} 
         <Section>
-            
             <div> {
-        <form>
+        <form onSubmit={HandleRegister}>
         <Right>
            <a href className="close" onClick={close}>
            &times;
            </a>
                 </Right>
-
-                <Title> Register </Title>
-                
+                <Title> Register </Title> 
                 <Left>
+                <div className = "form-group" >
+                <Label > Name <br/></Label> 
+                <input type = "email"
+                className = "form-control"
+                placeholder = "Enter email"
+                onChange = {
+                    (event) => setName(event.target.value) }
+                />
+                </div>                 
                 <div className = "form-group" >
                 <Label > Email <br/></Label> 
                 <input type = "email"
@@ -135,7 +129,7 @@ function Regis({close}) {
                 /> 
                 </div>
                 <div className = "form-group" >
-                <Label > <br/>Password<br/> </Label> 
+                <LabelPas > <br/>Password<br/> </LabelPas> 
                 <input type = "password"
                 className = "form-control"
                 placeholder = "Enter password"
@@ -143,19 +137,25 @@ function Regis({close}) {
                     (event) => setPassword(event.target.value) }
                 /> 
                 </div>
-
+                <div className = "form-group" >
+                <LabelRePas > <br/>Password Confirmation<br/> </LabelRePas> 
+                <input type = "password"
+                className = "form-control"
+                placeholder = "Re-Enter password"
+                onChange = {
+                    (event) => setPasswordConfirmation(event.target.value) }
+                /> 
+                </div>
                 <LeftButton>
                 <div>
                 <Button type = "submit"
-                className = "btn btn-dark btn-lg btn-block" > Register </Button> 
+                className = "btn btn-primary" onClick={HandleRegister&&close}> Register </Button> 
                 </div>
                 </LeftButton>
-
                 <div>
                 <Acc>
-                <a>already Registered ?
-                <Popup modal trigger={<u> Sign In</u>}>
-                {close => <Regis close={close} />}
+                <a href>already Registered ?
+                <Popup onClick={close} modal trigger={<u> Sign In</u>}>
                 </Popup>
                 </a> 
             </Acc>
@@ -165,6 +165,7 @@ function Regis({close}) {
       }
     </div>      
     </Section>  
+    </Alert>  
   )
 }
-export default Regis
+export default Regis;

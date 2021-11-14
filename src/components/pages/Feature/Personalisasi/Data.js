@@ -19,7 +19,7 @@ export const homeObjOne = {
     description:
       "Add your personal touch and create a convenient transaction experience. You can personalize it to your liking and make it easier for you to navigate.",
     imgStart: 'start',
-    img: 'fiturpersonalisasi.png',
+    img: 'fitur personalisasi.png',
     alt: 'fitur personalisasi',
   };
   

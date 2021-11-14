@@ -33,6 +33,7 @@ export default function List() {
               src={data.imageUrl}
               label={data.programName} 
               text= {data.description}
+              //text1 = {data.requirement}
               //descripsi = {data.requirement}
               path='/login'
             />

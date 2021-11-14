@@ -19,7 +19,7 @@ export const homeObjOne = {
     description:
       "With the bookmark feature, practically you can save information related to Internship details in just 1 click, so you no longer need to look for Internship information on the dashboard again if it is to your liking. Add new bookmarks or delete them, you are free to decide for yourself.",
     imgStart: 'start',
-    img: 'fiturbookmark.png',
+    img: 'fitur bookmark.png',
     alt: 'fitur bookmark',
   };
   
