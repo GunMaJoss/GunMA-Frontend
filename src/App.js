@@ -14,14 +14,15 @@ import Bantuan from './components/pages/Feature/Bantuan/Bantuan';
 import Fitur from './components/pages/Feature/Fitur/Fitur';
 import AboutUs from './components/pages/AboutUs/AboutUs';
 import List from './components/pages/Feature/ListMagang/List';
+import Login from './components/pages/Login'
 
 function App() {
   return (
     <Router> 
        <Navbar />
-       
-       <Switch>
        <Route path='/list' exact component={List}/>
+       <Switch>
+       
          <Route path='/' exact component={Home}/>
          <Route path='/personalisasi' exact component={Personalisasi}/>
          <Route path='/shortcut' exact component={Shortcut}/>
@@ -32,6 +33,7 @@ function App() {
          <Route path='/bantuan' exact component={Bantuan}/>
          <Route path='/fitur' exact component={Fitur}/>
          <Route path='/AboutUs' exact component={AboutUs}/>
+         <Route path='/Login' exact component={Login}/>
        </Switch>
        <Footer/>
     </Router>

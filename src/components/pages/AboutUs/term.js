@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section2 = styled.section`
-text-align: center;
+
   height: 500px;
   width: 1000px;
   display: block;
-  margin : 0 auto;
+  margin : 4rem auto;
   background-repeat: no-repeat;
   background-size: contain;
   box-shadow: 0 15px 14px rgb(0 42 177 / 12%);
@@ -23,6 +23,8 @@ const Left = styled.div`
 `;
 
 const Title = styled.p`
+text-align: center;
+margin-bottom: 25px;
   font-size: 25px;
   color: #04050a;
   font-weight: 400;
@@ -48,7 +50,7 @@ const term = () => {
          Term & Condition  <br /> 
           </Title>
           <Desc>
-          Use of Intellectual Property will notify users that the content, logos and other visual media that you create are yours and are protected by copyright laws. <br/> The termination clause will inform that user accounts on your website and mobile applications or user access to your mobile and wen sites (if the user is unable to have an account with you) can be provided or at your discretion. <br/>The governing law will tell which user governs will tell which user governs the agreement. This must be the country where your company is headquartered or the country where you operate your website and mobile app
+          Use of Intellectual Property will notify users that the content, logos and other visual media that you create are yours and are protected by copyright laws. <br/> <br/>The termination clause will inform that user accounts on your website and mobile applications or user access to your mobile and wen sites (if the user is unable to have an account with you) can be provided or at your discretion. <br/><br/>The governing law will tell which user governs will tell which user governs the agreement. This must be the country where your company is headquartered or the country where you operate your website and mobile app
           </Desc>
 
           

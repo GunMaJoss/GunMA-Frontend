@@ -46,7 +46,7 @@ const visi = () => {
         <Left>
 
         <Title>
-         Vision  <br /> 
+        <img src="images/logo8.png"></img> <br/>
           </Title>
           <Desc>
           GunMA is an application that helps students, especially high school seniors and undergraduate students to get complete and detailed information about internships

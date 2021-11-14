@@ -27,7 +27,7 @@ function Footer() {
           <div className='footer-link-items'>
             <h2>About App</h2>
             <Link to='/AboutUs'>Term & Condition</Link>
-            <Link to='/'>Privacy & Policy</Link>
+            <Link to='/AboutUs'>Privacy & Policy</Link>
             <Link to='/bantuan'>Help</Link>
             <Link to={
                 '//www.pens.ac.id/'
@@ -43,7 +43,7 @@ function Footer() {
             }target='_blank'>Whatsapp</Link>
 
             <Link to={'//mailto:tanayabestari@gmail.com'}target='_blank'>Email</Link>
-            <Link to='/'>Instagram</Link>
+            <Link to={'//www.instagram.com/it.a.19/?utm_medium=copy_link'}target='_blank'>Instagram</Link>
             <Link to={
                 '//www.youtube.com/watch?v=g2JQLQfw1J8'
               }

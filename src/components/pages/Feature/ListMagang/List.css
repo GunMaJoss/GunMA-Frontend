@@ -1,0 +1,138 @@
+.section-card2 {
+  width: 100%;
+  margin: 3px auto;
+  max-width: 1400px;
+  background: #fff;
+  border-radius: 0px;
+}
+
+.card2 {
+    padding: 4rem;
+    background:#ffff;
+  }
+  
+  .card2__container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    height: 100%;
+    width: 33%;
+    display: inline-block;
+  }
+  
+  .card2__wrapper {
+    position: row;
+    margin: 5px 0 10px;
+
+  }
+  
+  .card2__items {
+    margin-bottom: 24px;
+  }
+  
+  .card2__item {
+    display: flex;
+    flex: row;
+    margin: 0 1rem;
+    border-radius: 10px;
+    
+  }
+  
+  .card2__item__link {
+    display: grid;
+    flex-flow: column;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(106, 145, 218, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .card2__item__pic-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 67%;
+    overflow: hidden;
+  }
+  
+  .fade-img {
+    animation-name: fade-img;
+    animation-duration: 2s;
+  }
+  
+  .card6__item__pic-wrap::after {
+    content: attr(data-category);
+    position: absolute;
+    bottom: 0;
+    margin-left: 20px;
+    padding: 6px 8px;
+    max-width: calc((100%) - 60px);
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    background-color: #EDEFFD;
+    box-sizing: border-box;
+  }
+  
+  .card2__item__img {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    max-width: inherit;
+    overflow: hidden;
+  }
+  
+  .card2__item__title {
+    color: #666;
+    line-height: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .card2__item__img:hover {
+    transform: scale(1.1);
+  }
+  
+  .card2__item__info {
+    padding: 30px 30px 30px;
+  }
+  
+  .card2__item__text {
+    color: #AFAFAF;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  /*.card2__item__descripsi {
+    color: #AFAFAF;
+    font-size: 14px;
+    line-height: 24px;
+  }*/
+
+  @media only screen and (min-width: 1200px) {
+    .content__blog__container {
+      width: 84%;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .card2__items {
+      display: flex;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .card2__item {
+      margin-bottom: 2rem;
+    }
+  }
