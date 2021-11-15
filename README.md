@@ -7,7 +7,7 @@ MVP di sprint 2:
 
 Keseluruhan program ada di branch main.
 
-Cara mengakses list magang (disini masih menggunakan local, karena ketika di fetch dengan API yang sudah di deploy terdapat error CORS) : 
+Cara mengakses list magang, dan detail magang (disini masih menggunakan local, karena ketika di fetch dengan API yang sudah di deploy terdapat error CORS) : 
 1. Clone dari github backend, https://github.com/GunMaJoss/GunMA-Backend.git
 2. Buka terminal masuk ke staging, jalankan perintah $ code . (untuk membuka visual code) pilih file .env, kemudian ubah line 5 menjadi APP_URL=http://localhost, line 11 menjadi DB_HOST=127.0.0.1, line 13 menjadi DB_DATABASE=gunmajoss, dan line 15 menjadi DB_PASSWORD=
 3. Selanjutnya jalankan $ php artisan serve di terminalnya
