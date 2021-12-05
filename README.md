@@ -1,5 +1,5 @@
 MVP di sprint 2:
-- List Internship
+- List Internship, dimana di setiap cardnya berisi foto, nama internship dan deskripsi internship
 - Detail Intenship
 - Login
 - Regis
