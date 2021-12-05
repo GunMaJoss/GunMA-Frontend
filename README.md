@@ -14,3 +14,12 @@ Cara mengakses list magang, dan detail magang (disini masih menggunakan local, k
 4. Buka chrome/browser lain, lalu jalankan http://localhost:8000/
 5. Jalankan XAMPP, buka phpMyAdmin kemudian import database gunmajoss.sql (ada di branch main, nomer 3 dari bawah)
 6. Kemudian jalankan npm start di visual codenya
+
+-----------------------------------------------------------------------------------------------------------
+
+Sprint goal sprint 3:
+1. Searching
+2. Profile (Edit)
+3. Filter (Paid, WFH)
+
+Review sprint 2 yaitu membetulkan dari segi UI, kami sudah merevisinya.
