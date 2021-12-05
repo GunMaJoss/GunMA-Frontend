@@ -21,5 +21,6 @@ Sprint goal sprint 3:
 1. Searching
 2. Profile (Edit)
 3. Filter (Paid, WFH)
+4. Button login di navbar, ketika user sudah berhasil login. Maka buttonnya akan hide
 
 Review sprint 2 yaitu membetulkan dari segi UI, kami sudah merevisinya.
