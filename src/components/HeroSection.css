@@ -1,5 +1,5 @@
 .home__hero-section {
-  color: #fff;
+  color: #333;
   padding: 160px 0;
 }
 
@@ -29,6 +29,7 @@
   max-width: 400px;
   padding-top: 0;
   padding-bottom: 60px;
+  color : #333;
 }
 
 .heading {

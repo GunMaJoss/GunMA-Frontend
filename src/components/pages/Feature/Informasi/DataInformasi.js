@@ -19,7 +19,7 @@ export const homeObjOne = {
     description:
       "You no longer need to worry about incomplete and fake information because the information provided is verified and that is part of our priority.",
     imgStart: 'start',
-    img: 'fiturInformasi.png',
+    img: 'fitur Informasi.png',
     alt: 'fitur informasi'
   };
   

@@ -62,17 +62,24 @@
   width: 450px;
   box-sizing: border-box;
 }
+.footer-link-items2 > p {
+  color: #333;
+}
+
+.footer-link-items2 > h2 {
+  color: #333;
+}
 
 .footer-link-items h2 {
   margin-bottom: 16px;
 }
 
 .footer-link-items > h2 {
-  color: rgb(0, 0, 0);
+  color: #333;
 }
 
 .footer-link-items a {
-  color: rgb(0, 0, 0);
+  color: #333;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
@@ -92,7 +99,7 @@
 
 /* Social Icons */
 .social-icon-link {
-  color: rgb(0, 0, 0);
+  color: #333;
   font-size: 24px;
 }
 

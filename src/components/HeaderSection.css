@@ -1,5 +1,5 @@
 .home__header-section {
-  color: rgb(0, 0, 0);
+  color: #333;
   padding: 20px 0;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .dark {
-  color: #000000;
+  color: #333;
 }
 
 .home__header-subtitle {

@@ -87,7 +87,7 @@ function Regis({close}) {
       let item = {name,email,password,password_confirmation}
       console.warn(item);
 
-      let result= await fetch('http://127.0.0.1:8000/api/register',{
+      let result= await fetch('https://api.gunma.my.id//api/v1/register-user',{
         method : 'POST' ,
         headers : {
           "Accept": "application/json"
@@ -149,7 +149,7 @@ function Regis({close}) {
                 <LeftButton>
                 <div>
                 <Button type = "submit"
-                className = "btn btn-primary" onClick={HandleRegister&&close}> Register </Button> 
+                className = "btn btn-primary" onClick={HandleRegister}> Register </Button> 
                 </div>
                 </LeftButton>
                 <div>

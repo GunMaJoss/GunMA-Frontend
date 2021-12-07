@@ -15,13 +15,15 @@ import Fitur from './components/pages/Feature/Fitur/Fitur';
 import AboutUs from './components/pages/AboutUs/AboutUs';
 import Home from './components/pages/Feature/ListMagang/List';
 import Login from './components/pages/Login'
+import FilterPaid from './components/pages/Feature/ListMagang/FilterPaid';
+import FilterWFH from './components/pages/Feature/ListMagang/FilterWFH';
 import Detail from './components/pages/Feature/DetailMagang/Detail';
 
 function App() {
   return (
     <Router> 
        <Navbar />
-       <Route path='/detail' exact component={Detail}/>
+       
        <Switch>
        <Route path='/' exact component={Home}/>
          <Route path='/app' exact component={app}/>
@@ -35,6 +37,9 @@ function App() {
          <Route path='/fitur' exact component={Fitur}/>
          <Route path='/AboutUs' exact component={AboutUs}/>
          <Route path='/Login' exact component={Login}/>
+         <Route path='/FilterPaid' exact component={FilterPaid}/>
+         <Route path='/FilterWFH' exact component={FilterWFH}/>
+         <Route path='/Detail' exact component={Detail}/>
        </Switch>
        <Footer/>
     </Router>

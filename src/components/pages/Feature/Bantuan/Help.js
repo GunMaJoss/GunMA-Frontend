@@ -24,7 +24,7 @@ const Left = styled.div`
 const Title = styled.p`
     text-align: center;
   font-size: 55px;
-  color: #04050a;
+  color: #333333;
   font-weight: 400;
 `;
 
@@ -58,7 +58,7 @@ const Button2 = styled.a`
   height: 51px;
   line-height: 71px;
   font-size: 20px;
-  color: #000000;
+  color: #333333;
   cursor: pointer;
   background: #FAE57C;
   text-decoration: none;
@@ -79,7 +79,7 @@ const Button = styled.a`
   height: 51px;
   line-height: 71px;
   font-size: 20px;
-  color: #000000;
+  color: #333333;
   cursor: pointer;
   background: #FAE57C;
   text-decoration: none;

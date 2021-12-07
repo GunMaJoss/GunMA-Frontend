@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "40ac30eb-9e52-42c7-a629-ef7923fb9188",
+		"name": "Gunma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Internship",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/internship",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"internship"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "js",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "programName",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "isOpen",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "benefit",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "requirement",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "locationName",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "tagName",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "isPaid",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "isWfh",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "registrationLink",
+									"value": "q",
+									"type": "text"
+								},
+								{
+									"key": "closeRegistration",
+									"value": "2022-01-01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/internship/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"internship",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eedit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "js",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"programName\"  : \"tes\",\r\n   \"description\"  : \"Magangnya offline\",\r\n   \"duration\"  : \"6\",\r\n   \"isOpen\"  : \"1\",\r\n   \"benefit\"  : \"dibayar\",\r\n   \"requirement\"  : \"bebas\",\r\n   \"locationName\"  : \"Surabaya\",\r\n   \"tagName\"  : \"BOJONEGORO\",\r\n   \"imageUrl\"  : \"/sdad/p\",\r\n   \"isPaid\"  : \"/sdad/p\",\r\n   \"isWfh\"  : \"/sdad/p\",\r\n   \"registrationLink\"  : \"google.com\",\r\n   \"closeRegistration\"  : \"2022-01-01\"\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/internship/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"internship",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "js",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"programName\"  : \"frontend\",\r\n   \"description\"  : \"Magangnya offline\",\r\n   \"duration\"  : \"6\",\r\n   \"isOpen\"  : \"1\",\r\n   \"benefit\"  : \"dibayar\",\r\n   \"requirement\"  : \"bebas\",\r\n   \"locationName\"  : \"Surabaya\",\r\n   \"tagName\"  : \"BACKEND\",\r\n   \"image_filePath\"  : \"/sdad/p\",\r\n   \"registrationLink\"  : \"google.com\",\r\n   \"closeRegistration\"  : \"2022-01-01\"\r\n\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/internship/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"internship",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "js",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/internship/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"internship",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "js",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/internship/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"internship",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Raditya",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "raditcoustica@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "radit123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "radit123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "gibson.birdie@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "S82WOQV>vgT{l",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

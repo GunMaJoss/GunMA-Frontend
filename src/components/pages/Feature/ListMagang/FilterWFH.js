@@ -3,15 +3,14 @@ import axios from "axios";
 import CardItem2 from './CardItemMenu';
 import './List.css';
 import ButtonFi from "../../../filter/ButtonFilter";
-import SearchBar from '../../../Search/SearchBar';
 
-export default function List() {
+export default function FilterWFH() {
 
   const [data, setData] = useState([]);
   
   useEffect(() => {
     axios
-        .get('https://api.gunma.my.id/api/v1/internship')
+        .get('https://api.gunma.my.id/api/v1/internship/isWfh/1')
         .then((res) => {
             console.log(res.data);
             setData(res.data);
@@ -19,20 +18,12 @@ export default function List() {
         })
         .catch((err) => {
             console.log(err);
+            console.log('error');
         }); 
 }, []);
+
       return (
         <section className="section-card2">
-        <div align='center' >
-        <SearchBar>
-        <input type="Search" 
-            placeholder="Search Internship" 
-        />
-        </SearchBar>  
-        <button>
-         Search
-        </button>  
-        </div>
         <ButtonFi/>
         <div className='card2'>
         { data.map(data=>
@@ -47,7 +38,7 @@ export default function List() {
               text= {data.description}
               //text1 = {data.requirement}
               //descripsi = {data.requirement}
-              path='/detail'
+              path='/login'
             />
           </ul>
           </div>
@@ -57,6 +48,7 @@ export default function List() {
             )}
           </div>
           </section>
+
           
       );
     }

@@ -19,7 +19,7 @@ export const homeObjOne = {
     description:
       "With the notification feature, you don't need to open the app to get the latest internship information notifications",
     imgStart: 'start',
-    img: 'FiturNotifikasi.png',
+    img: 'Fitur Notifikasi.png',
     alt: 'fitur notifikasi'
   };
   

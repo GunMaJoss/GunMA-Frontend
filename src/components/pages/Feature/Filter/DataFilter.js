@@ -20,7 +20,7 @@ export const homeObjOne = {
       "With the internship search filter by location, you can get information about companies that open vacancies in that location easily. You can also choose an internship that suits your field.",
     buttonLabel: 'Find It Now',
     imgStart: 'start',
-    img: 'fiturfilter.png',
+    img: 'fitur filter.png',
     alt: 'fitur Filter'
   };
   

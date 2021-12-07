@@ -19,7 +19,7 @@ export const homeObjOne = {
     description:
       "With the Shortcut feature, you can now find the Internship you are interested in quickly and easily.",
     imgStart: 'start',
-    img: 'fiturShortcut.png',
+    img: 'fitur Shortcut.png',
     alt: 'fitur shortcut'
   };
   

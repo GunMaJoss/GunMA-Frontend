@@ -16,20 +16,18 @@ function CardDetail(props) {
           <div className='cardD__item__info'>
             <h3>Description :</h3>
             <h3 className='cardD__item__text'>{props.text_1}</h3>
-            <h3>Benefit :</h3>
+            <h3>Paid :</h3>
             <h3 className='cardD__item__text'>{props.text_2}</h3>
-            <h3>Requirement :</h3>
+            <h3>Benefit :</h3>
             <h3 className='cardD__item__text'>{props.text_3}</h3>
+            <h3>Requirement :</h3>
+            <h3 className='cardD__item__text'>{props.text_4}</h3>
             <h3>Registration :</h3>
             <h3 className='cardD__item__text'>{props.link}</h3>
             <h3>Duration :</h3>
-            <h3 className='cardD__item__text'>{props.text_4} Month</h3>
+            <h3 className='cardD__item__text'>{props.text_5} Month</h3>
             <h3>Close Registration :</h3>
-            <h3 className='cardD__item__text'>{props.text_5}</h3>
-            <h3>location :</h3>
             <h3 className='cardD__item__text'>{props.text_6}</h3>
-            <h4>tag :</h4>
-            <h3 className='cardD__item__text'>{props.text_7}</h3>
           </div>
         </Link>
       </li>
