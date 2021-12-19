@@ -15,3 +15,15 @@ Selanjutnya jalankan $ php artisan serve
 Buka chrome/browser lain, lalu jalankan http://localhost:8000/
 Jalankan XAMPP, buka phpMyAdmin kemudian import database gunmajoss.sql (ada di branch main, nomer 3 dari bawah)
 Kemudian jalankan npm start di visual codenya
+
+
+
+-----------------------------
+
+MVP Sprint 3 :
+1. Searching
+2. Profile (Read + edit)
+3. Filter (Paid, WFH)
+4. Button di navbar yang semula login berubah menjadi profile, ketika user sudah login
+
+Revuew sprint 2 yaitu membetulkan dari segi UI nya dan kami sudah membetulkannya
