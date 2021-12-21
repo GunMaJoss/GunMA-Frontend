@@ -16,4 +16,4 @@ Buka chrome/browser lain, lalu jalankan http://localhost:8000/
 Jalankan XAMPP, buka phpMyAdmin kemudian import database gunmajoss.sql (ada di branch main, nomer 3 dari bawah)
 Kemudian jalankan npm start di visual codenya
 
-==================================================================================================
+===================================================================================
