@@ -18,6 +18,9 @@ import Login from './components/pages/Login'
 import FilterPaid from './components/pages/Feature/ListMagang/FilterPaid';
 import FilterWFH from './components/pages/Feature/ListMagang/FilterWFH';
 import Navbarlogin from './components/pages/Navbar/Navbarlogin';
+import DetailMagang from './components/pages/Feature/DetailMagang/DetailMagang';
+import Profile from './components/pages/Feature/Profil/Profile';
+import Regis from './components/pages/Regis'
 
 function App() {
 
@@ -55,6 +58,9 @@ function App() {
          <Route path='/Login' exact component={Login}/>
          <Route path='/FilterPaid' exact component={FilterPaid}/>
          <Route path='/FilterWFH' exact component={FilterWFH}/>
+         <Route path='/Detail' exact component={DetailMagang}/>
+         <Route path='/profile' exact component={Profile}/>
+         <Route path='/Register' exact component={Regis}/>
        </Switch>
        <Footer/>
     </Router>

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
 import Regis from './Regis';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { Alert } from 'react-bootstrap';
+import swal from 'sweetalert';
+import { useState } from 'react';
 
 const Section = styled.section`
   background-color: #EDEFFD;
@@ -71,72 +72,83 @@ const Button = styled.a`
   box-shadow: 0 15px 14px rgb(0 42 177 / 12%);
 `;
 
-
 function Login({close}) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(false);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const history = useHistory();
-  
-  //useEffect(() => {
-  //  if (localStorage.getItem('user-info')){
-  //    setError(false);
-  //    //history.push('/');
-  //  }
-  //  else
-  //  {
-  //    setError(error);
-  //  }
-  //  return () => {};
-  //}, [email, password])
 
-  async function handleLogin () {
-    console.warn(email, password)
-    let item ={email, password};
-    let result = await fetch('http://127.0.0.1:8000/api/login', {
-        method : 'POST' ,
-        headers : {
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(item)
-    });
-      result = await result.json();
-      localStorage.setItem("user-info",JSON.stringify(result))
+  useEffect(() => {
+    if (localStorage.getItem('token')){
       history.push('/list');
-  }
+    }
+  },);
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const formData= new FormData();
+
+      formData.append('email',email);
+      formData.append('password',password);
+        //send data to server
+        axios({
+          url:'https://api.gunma.my.id/api/v1/login-user',
+          method:'POST',
+          headers:{
+            'Accept':'application/json',
+            'Content-Type':'multipart/form-data'
+          }
+          },FormData
+        ).then((res) => {
+          //set token on localStorage
+          console.log(res.data)
+          localStorage.setItem('token', res.data.access_token);
+          swal({
+            icon: 'success',
+            text: 'Berhasil!',
+          })
+          //redirect to dashboard
+      })
+      .catch((error) => {
+          //assign error to state "validation"
+          swal({
+            icon: 'succes',
+            text: 'Berhasil!',
+          })
+      })
+  };
     return ( 
-      <Alert>
-      {error && <Alert align="center" variant="danger">Salah Bro!!!</Alert>}
       <Section>
-        <div> {            
-          <form>
-            <Right>
+        <div>       
+          <form onSubmit={handleLogin}>
+          <Right>
           <a href className="close" onClick={close}>
           &times;
           </a>
           </Right>
           <Title>
-          Login 
+          Login Form
           </Title>
           <Left>
             <div className = "form-group" >
-            <Label> <br/>Email : <br/> </Label> 
+            <Label className="form-label"> <br/>Email : <br/> </Label> 
             <input type="email" 
+            name='email'
+            value={email}
             placeholder="Enter email" 
-            onChange={(e) => setEmail(e.target.value)} />
+            onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className = "form-group" >
-            <LabelPas ><br/> Password : <br/> </LabelPas> 
+            <LabelPas className="form-label"><br/> Password : <br/> </LabelPas> 
             <input type="password"
+            name='password' 
+            value={password}
             placeholder="Enter password"  
-            onChange={(e) => setPassword(e.target.value)} />            
+            onChange={(e) => setPassword(e.target.value)} />           
             </div>
             <LeftButton>
             <div className="Login">
-            <Button type = "submit"
-            className = "btn btn-dark btn-lg btn-block"
-            onClick={handleLogin}> Login </Button>
+            <Button type = "submit" className = "btn btn-dark btn-lg btn-block" onClick={handleLogin}> Login </Button>
             </div>
             </LeftButton>
             <Acc>
@@ -146,12 +158,10 @@ function Login({close}) {
             </Popup>
             </a> 
             </Acc>
-            </Left>
+            </Left> 
             </form>
-            }
-            </div>
+            </div> 
             </Section>
-            </Alert>
         )
       }
 export default Login;

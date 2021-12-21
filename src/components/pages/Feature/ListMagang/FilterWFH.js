@@ -3,6 +3,7 @@ import axios from "axios";
 import CardItem2 from './CardItemMenu';
 import './List.css';
 import ButtonFi from "../../../filter/ButtonFilter";
+import SearchBar from '../../../Search/SearchBar';
 
 export default function FilterWFH() {
 
@@ -24,6 +25,16 @@ export default function FilterWFH() {
 
       return (
         <section className="section-card2">
+        <div align='center' >
+        <SearchBar>
+        <input type="Search" 
+            placeholder="Search Internship" 
+        />
+        </SearchBar>
+        <button>
+         Search
+        </button>  
+        </div>
         <ButtonFi/>
         <div className='card2'>
         { data.map(data=>
@@ -38,7 +49,7 @@ export default function FilterWFH() {
               text= {data.description}
               //text1 = {data.requirement}
               //descripsi = {data.requirement}
-              path='/login'
+              path='/detail'
             />
           </ul>
           </div>

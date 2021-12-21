@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
 import Popup from "reactjs-popup";
 import styled from 'styled-components';
 //import { useHistory } from 'react-router-dom';
@@ -76,27 +76,36 @@ const Button = styled.a`
 
 function Regis({close}) {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [password_confirmation, setPasswordConfirmation] = useState("");
-    const [error] = useState(false);
+    const [error, setError] = useState(false);
 
-    async function HandleRegister () {
-
-      let item = {name,email,password,password_confirmation}
-      console.warn(item);
-
-      let result= await fetch('http://127.0.0.1:8000/api/register',{
-        method : 'POST' ,
-        headers : {
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(item)
-      })
-      result = await result.json()
-      localStorage.setItem("user-info",JSON.stringify(result))
-      }
+    const [regisInput, setLogin] = useState ({
+      name:'',
+      email:'',
+      password:'',
+      password_confirmation:'',
+    });
+    const handleInput = (e) =>{
+      e.persist();
+      setLogin({...regisInput,[e.target.name] : e.target.value})
+    }
+    const HandleRegister = async(e) => {
+      e.preventDefault();
+      const data = {
+      name : regisInput.name,
+      email : regisInput.email,
+      password : regisInput.password,
+      password_confirmation : regisInput.password_confirmation,
+    }
+      //setLoading(true);
+      await axios.post('https://api.gunma.my.id/api/v1/register-user', data).then(response => {
+        //setLoading(false);
+        setError(false);
+        localStorage.setItem('status',response.meta.status);
+      }).catch(error => {
+        //setLoading(false);
+        setError(true);
+      });
+    }
     return (
       <Alert>
       {error && <Alert align="center" variant="danger">Salah Bro!!!</Alert>} 
@@ -114,36 +123,40 @@ function Regis({close}) {
                 <Label > Name <br/></Label> 
                 <input type = "email"
                 className = "form-control"
+                name='name'
+                value={regisInput.name}
                 placeholder = "Enter email"
-                onChange = {
-                    (event) => setName(event.target.value) }
+                onChange = {handleInput}
                 />
                 </div>                 
                 <div className = "form-group" >
                 <Label > Email <br/></Label> 
                 <input type = "email"
+                name='email'
                 className = "form-control"
+                value={regisInput.email}
                 placeholder = "Enter email"
-                onChange = {
-                    (event) => setEmail(event.target.value) }
+                onChange = {handleInput}
                 /> 
                 </div>
                 <div className = "form-group" >
                 <LabelPas > <br/>Password<br/> </LabelPas> 
                 <input type = "password"
                 className = "form-control"
+                name='password'
+                value={regisInput.password}
                 placeholder = "Enter password"
-                onChange = {
-                    (event) => setPassword(event.target.value) }
+                onChange = {handleInput}
                 /> 
                 </div>
                 <div className = "form-group" >
                 <LabelRePas > <br/>Password Confirmation<br/> </LabelRePas> 
                 <input type = "password"
+                name='password_confirmation'
                 className = "form-control"
+                value={regisInput.password_confirmation}
                 placeholder = "Re-Enter password"
-                onChange = {
-                    (event) => setPasswordConfirmation(event.target.value) }
+                onChange = {handleInput}
                 /> 
                 </div>
                 <LeftButton>

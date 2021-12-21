@@ -10,9 +10,9 @@ const ButtonFi = styled.button`
 border: 2.5px solid #E7EDF1; 
 background: transparent;       
     color: black;  
-padding: 8px 23px;
+    padding: 4px 23px;
 position: absolute;
-  left: 50%;
+  left: 43%;
   border-radius: 20px;
 
 `
@@ -21,24 +21,11 @@ const ButtonFi2 = styled.button`
 border: 2.5px solid #E7EDF1; 
 background: transparent;          
     color: black;  
-    padding: 8px 23px;
+    padding: 4px 23px;
 position: absolute;
-  left: 55.5%;
+  left: 49%;
   border-radius: 20px;
 `
-
-
-//  const clickMe =()=>{
-//    console.log("simple click event");
-  
-//  }
-
-
-// function clickMe(){
-// //   setClickMe(prev => !prev)
-      
-
-//  }
 
 // const ButtonToggle = styled.button`
 //   opacity : 0.7;
