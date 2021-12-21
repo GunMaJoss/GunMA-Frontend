@@ -17,13 +17,29 @@ import Home from './components/pages/Feature/ListMagang/List';
 import Login from './components/pages/Login'
 import FilterPaid from './components/pages/Feature/ListMagang/FilterPaid';
 import FilterWFH from './components/pages/Feature/ListMagang/FilterWFH';
-import Detail from './components/pages/Feature/DetailMagang/Detail';
+import Navbarlogin from './components/pages/Navbar/Navbarlogin';
 
 function App() {
+
+  //let {isLoggedIn} = this.state;
+  const isLogin = () => {
+    if (localStorage.getItem("user-info")) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <Router> 
-       <Navbar />
-       
+
+      {isLogin
+        ? <Navbar />
+        : <Navbarlogin />
+      }
+
+        {/* <Navbar />
+       < Navbarlogin /> */}
+
        <Switch>
        <Route path='/' exact component={Home}/>
          <Route path='/app' exact component={app}/>
@@ -39,7 +55,6 @@ function App() {
          <Route path='/Login' exact component={Login}/>
          <Route path='/FilterPaid' exact component={FilterPaid}/>
          <Route path='/FilterWFH' exact component={FilterWFH}/>
-         <Route path='/Detail' exact component={Detail}/>
        </Switch>
        <Footer/>
     </Router>

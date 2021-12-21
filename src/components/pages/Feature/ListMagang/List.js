@@ -3,7 +3,7 @@ import axios from "axios";
 import CardItem2 from './CardItemMenu';
 import './List.css';
 import ButtonFi from "../../../filter/ButtonFilter";
-import SearchBar from '../../../Search/SearchBar';
+import { isLogin } from "../../Navbar/auth";
 
 export default function List() {
 
@@ -21,18 +21,9 @@ export default function List() {
             console.log(err);
         }); 
 }, []);
+
       return (
         <section className="section-card2">
-        <div align='center' >
-        <SearchBar>
-        <input type="Search" 
-            placeholder="Search Internship" 
-        />
-        </SearchBar>  
-        <button>
-         Search
-        </button>  
-        </div>
         <ButtonFi/>
         <div className='card2'>
         { data.map(data=>
@@ -47,7 +38,7 @@ export default function List() {
               text= {data.description}
               //text1 = {data.requirement}
               //descripsi = {data.requirement}
-              path='/detail'
+              path = {isLogin} 
             />
           </ul>
           </div>
@@ -57,6 +48,7 @@ export default function List() {
             )}
           </div>
           </section>
+
           
       );
     }

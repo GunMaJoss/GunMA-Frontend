@@ -93,7 +93,7 @@ function Login({close}) {
   async function handleLogin () {
     console.warn(email, password)
     let item ={email, password};
-    let result = await fetch('https://api.gunma.my.id/api/v1/login-user', {
+    let result = await fetch('http://127.0.0.1:8000/api/login', {
         method : 'POST' ,
         headers : {
           "Accept": "application/json"

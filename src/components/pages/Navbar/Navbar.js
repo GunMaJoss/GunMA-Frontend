@@ -6,6 +6,7 @@ import Dropdown from '../../Dropdown'
 //import {NavLink} from './images'
 import Popup from "reactjs-popup";
 import Login from '../Login'
+import { login } from '../Navbar/auth'
 
 function Navbar() {
     const [click,setClick] = useState(false);
@@ -90,6 +91,12 @@ function Navbar() {
             <Popup modal trigger={<Button buttonStyle='btn--outline'>Sign In</Button>}>
             {close => <Login close={close} />}
             </Popup>
+            {/* {check local storage, kalo == login? => passing component; 
+            else signIn} 
+            
+            {checkSignIn() == 'login' ? <Popup/> : <ProfileBtn/>}
+
+            */}
             </div>
         </nav>
         </>

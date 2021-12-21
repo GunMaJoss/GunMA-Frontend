@@ -1,17 +1,18 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { propTypes } from 'react-bootstrap/esm/Image'
 import styled from 'styled-components'
 import FilterPaid from '../pages/Feature/ListMagang/FilterPaid'
 import FilterWFH from '../pages/Feature/ListMagang/FilterWFH'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { Button } from '../Button'
 
 const ButtonFi = styled.button`
 border: 2.5px solid #E7EDF1; 
 background: transparent;       
     color: black;  
-    padding: 4px 23px;
+padding: 8px 23px;
 position: absolute;
-  left: 43%;
+  left: 50%;
   border-radius: 20px;
 
 `
@@ -20,19 +21,24 @@ const ButtonFi2 = styled.button`
 border: 2.5px solid #E7EDF1; 
 background: transparent;          
     color: black;  
-    padding: 4px 23px;
+    padding: 8px 23px;
 position: absolute;
-  left: 49%;
+  left: 55.5%;
   border-radius: 20px;
 `
 
 
-function clickMe(){
-  <Link to='/FilterPaid' >
-  </Link>
+//  const clickMe =()=>{
+//    console.log("simple click event");
+  
+//  }
+
+
+// function clickMe(){
+// //   setClickMe(prev => !prev)
       
 
-}
+//  }
 
 // const ButtonToggle = styled.button`
 //   opacity : 0.7;
@@ -56,6 +62,11 @@ function clickMe(){
 //    }
 
 export default function ButtonFilter (){
+
+  const history = useHistory();
+  const clickMe = () => history.push('/FilterPaid');    
+  const Handleclick = () => history.push('/FilterWFH');  
+
   return(
     <div>
 
@@ -63,12 +74,15 @@ export default function ButtonFilter (){
       Paid
       </Link> */}
       
+      {/* <ButtonFi type="button" onClick={clickMe}>
+      Go home
+    </ButtonFi> */}
 
-      <ButtonFi to='/FilterPaid'  onClick={clickMe}>
+      <ButtonFi  onClick={clickMe}>
       Paid
       </ButtonFi>
 
-      <ButtonFi2 to='/FilterPaid'  onClick={clickMe}>
+      <ButtonFi2  onClick={Handleclick}>
       WFH
       </ButtonFi2>
 

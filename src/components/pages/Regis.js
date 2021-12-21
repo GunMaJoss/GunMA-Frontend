@@ -87,7 +87,7 @@ function Regis({close}) {
       let item = {name,email,password,password_confirmation}
       console.warn(item);
 
-      let result= await fetch('https://api.gunma.my.id//api/v1/register-user',{
+      let result= await fetch('http://127.0.0.1:8000/api/register',{
         method : 'POST' ,
         headers : {
           "Accept": "application/json"
