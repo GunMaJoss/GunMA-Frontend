@@ -3,9 +3,10 @@ import axios from 'axios';
 import Popup from 'reactjs-popup';
 import Regis from './Regis';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import { useState } from 'react';
+import { LOGINAPI } from './url';
 
 const Section = styled.section`
   background-color: #EDEFFD;
@@ -76,51 +77,48 @@ function Login({close}) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory();
+  const [error, setError] = useState(false);
+  //const apilogin='https://api.gunma.my.id/api/v1/login-user';
 
-  useEffect(() => {
-    if (localStorage.getItem('token')){
-      history.push('/list');
-    }
-  },);
+   useEffect(() => {
+     if (email || password) {
+      setError(false);
+     }
+     return () => {};
+   }, [email, password]);
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    const formData= new FormData();
-
-      formData.append('email',email);
-      formData.append('password',password);
-        //send data to server
-        axios({
-          url:'https://api.gunma.my.id/api/v1/login-user',
-          method:'POST',
-          headers:{
-            'Accept':'application/json',
-            'Content-Type':'multipart/form-data'
-          }
-          },FormData
-        ).then((res) => {
-          //set token on localStorage
-          console.log(res.data)
-          localStorage.setItem('token', res.data.access_token);
-          swal({
-            icon: 'success',
-            text: 'Berhasil!',
-          })
-          //redirect to dashboard
+  function handleLogin (){
+      // var datauser ={
+      //   email : email,
+      //   password : password,
+      // }
+      console.log(email,password);
+      axios.post(LOGINAPI, {
+        'email' : email,
+        'password' : password,
       })
-      .catch((error) => {
-          //assign error to state "validation"
-          swal({
-            icon: 'succes',
-            text: 'Berhasil!',
-          })
+      .then(function (res) {
+        //set token on localStorage
+        setError(false);
+        console.log(res)
+        localStorage.setItem('token', res.data.data.access_token);
+        swal({
+          icon: 'success',
+          text: 'Berhasil!',
+        })
+        window.location.reload();
+
+    }).catch((err) =>{
+      setError(true);
+      swal({
+        icon: 'error',
+        text: 'Maaf! Terjadi Error',
       })
+    })
   };
     return ( 
       <Section>
         <div>       
-          <form onSubmit={handleLogin}>
           <Right>
           <a href className="close" onClick={close}>
           &times;
@@ -130,27 +128,27 @@ function Login({close}) {
           Login Form
           </Title>
           <Left>
-            <div className = "form-group" >
+          <form>
+            <div className = "form-group">
             <Label className="form-label"> <br/>Email : <br/> </Label> 
-            <input type="email" 
-            name='email'
+            <input type="email"
             value={email}
             placeholder="Enter email" 
             onChange={(e) => setEmail(e.target.value)}/>
             </div>
-            <div className = "form-group" >
+            <div className = "form-group">
             <LabelPas className="form-label"><br/> Password : <br/> </LabelPas> 
             <input type="password"
-            name='password' 
             value={password}
             placeholder="Enter password"  
             onChange={(e) => setPassword(e.target.value)} />           
             </div>
             <LeftButton>
             <div className="Login">
-            <Button type = "submit" className = "btn btn-dark btn-lg btn-block" onClick={handleLogin}> Login </Button>
+            <Button type = "submit" variant="primary" className = "btn btn-dark btn-lg btn-block" onClick={handleLogin}> Login </Button>
             </div>
             </LeftButton>
+            </form>
             <Acc>
             <a align="center" href>  Don't Have Account ?
             <Popup onClick={close} modal trigger={<u> Sign Up</u>}>
@@ -159,7 +157,6 @@ function Login({close}) {
             </a> 
             </Acc>
             </Left> 
-            </form>
             </div> 
             </Section>
         )

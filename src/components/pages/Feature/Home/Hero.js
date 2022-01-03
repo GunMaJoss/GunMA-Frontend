@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BgImg from '../../../..//images/bghome.PNG';
+import BgImg from '../../../..//images/bg.PNG';
 
 
 const Section = styled.section`
@@ -41,7 +41,7 @@ const Button = styled.a`
   align-items: center;
   border-radius: 18px;
   margin-top: 30px;
-  width: 150px;
+  width: 210px;
   height: 51px;
   line-height: 71px;
   font-size: 20px;
@@ -62,10 +62,10 @@ const Hero = () => {
           More Comprehensive  <br /> Internship Information
           </Title>
           <Desc>
-          Gunma is a forum for information seekers about internships spread throughout Indonesia. GunMA provides information about internships in more comprehensive detail. GunMA provides various advantages of features to view internship information based on several categories such as padiable and unpaidbale, based on the implementation of internships (WFH/WFO), as well as the classification of internships that receive skill training.
+          Gunma is a forum for information seekers about internships spread throughout Indonesia. GunMA provides information about internships in more comprehensive detail. GunMA provides various advantages of features to view internship information based on several categories such as padiable and unpaidbale, based on the implementation of internships (WFH/WFO), as well as internship classification according to your best city.
           </Desc>
-          <Button href='https://bit.ly/webull-join' target='_blank'>
-            <span>Find It Now</span>
+          <Button href='https://play.google.com/store/apps/details?id=com.gunmajoss.gunma' target='_blank'>
+            <span>Get mobile version</span>
           
           </Button>
         </Left>

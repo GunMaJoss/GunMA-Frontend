@@ -12,6 +12,7 @@ import {
 function Footer() {
   return (
     <div className='footer-container'>
+    
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
         Find more experiences in GunMA
@@ -39,13 +40,13 @@ function Footer() {
             <h2>Contact Us</h2>
             <Link 
             to={
-              '//chat.whatsapp.com/Gf3WMpetc3pKp8GssWwRfM'
+              '//api.whatsapp.com/send?phone=6282231532679'
             }target='_blank'>Whatsapp</Link>
-
-            <Link to={'//mailto:tanayabestari@gmail.com'}target='_blank'>Email</Link>
-            <Link to={'//www.instagram.com/it.a.19/?utm_medium=copy_link'}target='_blank'>Instagram</Link>
+{/* 
+            <Link to={'//mailto:email@gmail.com'}target='_blank'>Email</Link> */}
+            <Link to={'//www.instagram.com/gunmajoss/'}target='_blank'>Instagram</Link>
             <Link to={
-                '//www.youtube.com/watch?v=g2JQLQfw1J8'
+                '//www.youtube.com/watch?v=WMo-lk0YuFw'
               }
               target='_blank'>Youtube</Link>
            
@@ -61,6 +62,8 @@ function Footer() {
         </div>
           </div>
 
+          
+
       <section className='social-media'>
         <div className='social-media-wrap'>
         
@@ -69,28 +72,29 @@ function Footer() {
             <img src="images/logo5.png"></img>
             </Link>
           </div>
+          <small class='website-rights'>GunMA © 2021</small>
           <div className='social-icons'>
             <Link
               className='social-icon-link'
               to={
-                '//chat.whatsapp.com/Gf3WMpetc3pKp8GssWwRfM'
+                '//api.whatsapp.com/send?phone=6282231532679'
               }
               target='_blank'
               aria-label='whatsapp'
             >
               <FaWhatsapp />
             </Link>
-            <Link
+            {/* <Link
               className='social-icon-link'
               to={'//mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBncGXRsxhcjsXBmdKFgwqfcbNClgRnvGcCsmPlRHzpvdNFtxjrwhbCrsJWMZKpqCXsBFdF'}
               target='_blank'
               aria-label='Email'
             >
               <FaEnvelope/>
-            </Link>
+            </Link> */}
             <Link
               className='social-icon-link'
-              to={'//www.instagram.com/it.a.19/?utm_medium=copy_link'}
+              to={'//www.instagram.com/gunmajoss/'}
               target='_blank'
               aria-label='Instagram'
             >
@@ -99,7 +103,7 @@ function Footer() {
             <Link
               className='social-icon-link'
               to={
-                '//www.youtube.com/watch?v=g2JQLQfw1J8'
+                '//www.youtube.com/watch?v=WMo-lk0YuFw'
               }
               target='_blank'
               aria-label='Youtube'

@@ -43,7 +43,7 @@ function FilterSection({
                 >
                   {description}
                 </p>
-                <Link to='/download'>
+                <Link to='////play.google.com/store/apps/details?id=com.gunmajoss.gunma' target='_blank' >
                   <Button buttonSize='btn--wide' buttonColor='blue'>
                     {buttonLabel}
                   </Button>

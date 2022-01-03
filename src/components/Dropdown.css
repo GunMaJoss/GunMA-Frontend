@@ -30,3 +30,11 @@
     padding: 5px;
 }
 
+.btn-logout{
+    border: none;
+    color: #000;
+    background: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding-left: 5px;
+    font-size: 17px;
+}

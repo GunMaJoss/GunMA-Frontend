@@ -68,7 +68,7 @@ const Button2 = styled.a`
 `;
 
 const Button = styled.a`
-  display: flex;
+  /* display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,33 @@ const Button = styled.a`
   background: #FAE57C;
   text-decoration: none;
   box-shadow: 0 15px 14px rgb(0 42 177 / 12%);
-  position: absolute;
+  position: absolute; */
+  
+  border-radius: 18px;
+  margin-top: 30px;
+  width: 250px;
+  height: 51px;
+  line-height: 71px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  cursor: pointer;
+  background: #FAE57C;
+  outline: none;
+  text-decoration: none;
+  box-shadow: 0 15px 14px rgb(0 42 177 / 12%);
+  font-size: 19px;
+  padding: 12px 20px;
+  margin: 0 auto;
+    display: flex;
+  &:hover {
+    transition: all 0.3s ease-out;
+    background-color: var(--warning);
+    color: #fff;
+    border-radius: 20px;
+    border: 2px solid var(--warning);
+  }
   
 `;
 
@@ -97,19 +123,20 @@ const Hero = () => {
           Need Information  <br />Related to Internships According<br/>to Your Field and Needs
           </Title>
           <Desc>
-          Download the GunMA Application by clicking the link below
+          Contact Us
           </Desc>
-          <Button href='https://bit.ly/webull-join' target='_blank'>
-            <span>https://GunMAAppsDownload</span>
+          <br/>
+          <Button href='https://api.whatsapp.com/send?phone=6282231532679' target='_blank'>
+            <span>+(62) 82-23153-2679</span>
           
           </Button>
-          <Desc2>
+          {/* <Desc2>
           Or Contact Us
           </Desc2>
-          <Button2 href='https://bit.ly/webull-join' target='_blank'>
-            <span>+(62) 822-3153-2688</span>
+          <Button2 href='https://api.whatsapp.com/send?phone=6282231532679' target='_blank'>
+            <span>+(62) 82-23153-2679</span>
           
-          </Button2>
+          </Button2> */}
         </Left>
       </Content>
     </Section>

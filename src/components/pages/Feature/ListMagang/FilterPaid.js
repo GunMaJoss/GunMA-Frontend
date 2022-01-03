@@ -4,6 +4,7 @@ import CardItem2 from './CardItemMenu';
 import './List.css';
 import ButtonFi from "../../../filter/ButtonFilter";
 import SearchBar from '../../../Search/SearchBar';
+import { useHistory, Link } from 'react-router-dom';
 
 export default function FilterPaid() {
 
@@ -25,6 +26,7 @@ export default function FilterPaid() {
 
       return (
         <section className="section-card2">
+    
         <div align='center' >
         <SearchBar>
         <input type="Search" 
@@ -37,24 +39,26 @@ export default function FilterPaid() {
         </div>
         <ButtonFi/>
         <div className='card2'>
-        { data.map(data=>
-
-    <div className='card2__container'>
-
+        {Object.keys(data).map((item, i) => (
+        <div className='card2__container'>
         <div className='card2__wrapper'>
         <ul className='card2__items'>
-            <CardItem2
-              src={data.imageUrl}
-              label={data.programName} 
-              text= {data.description}
+          
+        <Link to= {`/DetailMagang/${data[item].id}`} style={{ textDecoration: 'none' }}>
+            <CardItem2 
+           
+              src={data[item].imageUrl}
+              label={data[item].programName} 
+              text= {data[item].description}
               //text1 = {data.requirement}
               //descripsi = {data.requirement}
-              path='/detail'
             />
+           
+            </Link>
           </ul>
           </div>
           </div>
-            )}
+            ))}
           </div>
           </section>
 

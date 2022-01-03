@@ -1,12 +1,19 @@
 import React, { useState} from 'react';
 import { MenuItems2 } from './MenuItems2';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 import './Dropdown.css';
+
 
 function Dropdown2() {
     const [click, setClick] = useState(false)
-
+    const history = useHistory()
     const handleClick = () => setClick(!click)
+    const _onLogout = () => {
+        localStorage.removeItem("token");
+         history.replace("/");
+         window.location.reload();
+       };
+       
 
     return (
     <>
@@ -23,6 +30,7 @@ function Dropdown2() {
                 </li>
             );
         })}
+   <button className="btn-logout" onClick={_onLogout}>Logout</button>
     </ul>
     </>
 );

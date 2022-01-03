@@ -49,6 +49,8 @@ function Navbar() {
 
     return (
         <>
+
+        
       <nav className='navbar'>
             <Link to='/' className='navbar-logo'>
             <img src="images/logo5.png"></img>
@@ -61,7 +63,7 @@ function Navbar() {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
                     <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                       Find Internship
+                      Home
                     </Link>
                 </li>
 
@@ -69,7 +71,7 @@ function Navbar() {
                 onMouseEnter = {onMouseEnter}
                 onMouseLeave = {onMouseLeave}
                 >
-                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='#' className='nav-links' onClick={closeMobileMenu}>
                         Fitur <i className = 'fas fa-caret-down'/>
                     </Link>
                     {dropdown && <Dropdown/>}

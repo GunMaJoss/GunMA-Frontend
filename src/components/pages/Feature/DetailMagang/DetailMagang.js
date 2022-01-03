@@ -1,15 +1,17 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import axios from "axios";
 import CardDetail from './CardDetail';
 import './DetailMagang.css';
+import { useLocation, useParams} from "react-router-dom";
 
 export default function Detail() {
   const [data, setData] = useState([]);
+  const {id}= useParams();
 
   useEffect(() => {
     axios
-        .get('https://api.gunma.my.id/api/v1/internship/15')
+        .get('https://api.gunma.my.id/api/v1/internship/' +id)
         .then((res) => {
             console.log(res.data);
             setData(res.data);
@@ -36,10 +38,10 @@ export default function Detail() {
               link = {data.registrationLink}
               text_5 = {data.duration}
               text_6 = {data.closeRegistration}
-
               // text_7 = {data.location.locationName}                 
              // text_8 = {data.tag.tagName}
             />
+       
           </ul>
           </div>
           </div>

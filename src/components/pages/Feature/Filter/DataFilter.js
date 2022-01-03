@@ -18,7 +18,8 @@ export const homeObjOne = {
     headline: 'Apprentice Search Feature in GunMA',
     description:
       "With the internship search filter by location, you can get information about companies that open vacancies in that location easily. You can also choose an internship that suits your field.",
-    buttonLabel: 'Find It Now',
+    buttonLabel: 'Get Mobile Version',
+    // path='https://play.google.com/store/apps/details?id=com.gunmajoss.gunma',
     imgStart: 'start',
     img: 'fitur filter.png',
     alt: 'fitur Filter'

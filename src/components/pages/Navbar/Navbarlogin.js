@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button } from '../../Button'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Navbarlogin.css'
 import Dropdown from '../../Dropdown'
 import Dropdown2 from '../../Dropdown2'
@@ -13,7 +13,8 @@ function Navbarlogin() {
     const [click,setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
     const [button, setButton] = useState(true);
-    
+    const history = useHistory()
+
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -47,6 +48,12 @@ function Navbarlogin() {
       }, []);
     
       window.addEventListener('resize', showButton);
+
+      const _onLogout = () => {
+        localStorage.removeItem("token");
+         history.replace("/");
+         window.location.reload();
+       };
 
     return (
         <>
@@ -95,12 +102,14 @@ function Navbarlogin() {
                 onMouseLeave = {onMouseLeave}>
                
                <Link className='nav-links' onClick={closeMobileMenu}>
-               <i className = 'fas fa-user-circle'/>  
-               {/* <i className = 'fas fa-sign-in-alt'/> */}
+               <i className = 'fas fa-user-circle' onClick={_onLogout}> Logout </i> 
+               {/* <button className="btn-logout" onClick={_onLogout}></button> */}
                     </Link>
-                  {dropdown && <Dropdown2/>}
-
+                    
+                  {/* {<Dropdown2/>} */}
+                   
                   </li>
+                  
             {/* {check local storage, kalo == login? => passing component; 
             else signIn} 
             

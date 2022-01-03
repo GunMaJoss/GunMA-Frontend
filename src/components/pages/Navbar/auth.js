@@ -13,7 +13,7 @@ export const login = (user) => {
   };
   
   export const isLogin = () => {
-    if (localStorage.getItem("USER")) {
+    if (localStorage.getItem("token")) {
       return true;
     }
     return false;

@@ -4,9 +4,4 @@ export const MenuItems2 = [
         path: '/profile',
         cName : 'dropdown-Link'
     },
-    {
-        title: 'Logout',
-        path: '/logout',
-        cName : 'dropdown-Link'
-    },
 ];

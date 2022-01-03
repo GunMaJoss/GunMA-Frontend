@@ -3,7 +3,7 @@ import axios from 'axios';
 import Popup from "reactjs-popup";
 import styled from 'styled-components';
 //import { useHistory } from 'react-router-dom';
-import { Alert } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 const Section = styled.section`
   background-color: #EDEFFD;
@@ -76,7 +76,6 @@ const Button = styled.a`
 
 function Regis({close}) {
 
-    const [error, setError] = useState(false);
 
     const [regisInput, setLogin] = useState ({
       name:'',
@@ -90,25 +89,28 @@ function Regis({close}) {
     }
     const HandleRegister = async(e) => {
       e.preventDefault();
-      const data = {
-      name : regisInput.name,
-      email : regisInput.email,
-      password : regisInput.password,
-      password_confirmation : regisInput.password_confirmation,
+      const body = {
+      'name' : regisInput.name,
+      'email' : regisInput.email,
+      'password' : regisInput.password,
+      'password_confirmation' : regisInput.password_confirmation,
     }
       //setLoading(true);
-      await axios.post('https://api.gunma.my.id/api/v1/register-user', data).then(response => {
+      await axios.post('https://api.gunma.my.id/api/v1/register-user', body).then(response => {
         //setLoading(false);
-        setError(false);
-        localStorage.setItem('status',response.meta.status);
+        swal({
+          icon: 'success',
+          text: 'Registrasi Berhasil!',
+        })
       }).catch(error => {
         //setLoading(false);
-        setError(true);
+        swal({
+          icon: 'error',
+          text: 'Maaf! Registrasi Gagal ^^,',
+        })         
       });
     }
     return (
-      <Alert>
-      {error && <Alert align="center" variant="danger">Salah Bro!!!</Alert>} 
         <Section>
             <div> {
         <form onSubmit={HandleRegister}>
@@ -178,7 +180,6 @@ function Regis({close}) {
       }
     </div>      
     </Section>  
-    </Alert>  
   )
 }
 export default Regis;
