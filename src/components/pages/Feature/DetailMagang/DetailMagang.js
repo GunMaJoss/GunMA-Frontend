@@ -3,7 +3,7 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 import CardDetail from './CardDetail';
 import './DetailMagang.css';
-import { useLocation, useParams} from "react-router-dom";
+import { Link, useLocation, useParams} from "react-router-dom";
 
 export default function Detail() {
   const [data, setData] = useState([]);
@@ -20,7 +20,7 @@ export default function Detail() {
         .catch((err) => {
             console.log(err);
         }); 
-}, []);
+},[]);
 
       return (
         <section className="section-cardD">
@@ -32,7 +32,7 @@ export default function Detail() {
               src={data.imageUrl}
               label={data.programName}
               text_1 = {data.description}
-              text_2 = {data.isPaid}
+              // text_2 = {data.isPaid}
               text_3 = {data.benefit}
               text_4 = {data.requirement}
               link = {data.registrationLink}
@@ -41,7 +41,6 @@ export default function Detail() {
               // text_7 = {data.location.locationName}                 
              // text_8 = {data.tag.tagName}
             />
-       
           </ul>
           </div>
           </div>

@@ -3,7 +3,6 @@ import axios from "axios";
 import CardItem2 from './CardItemMenu';
 import './List.css';
 import ButtonFi from "../../../filter/ButtonFilter";
-import SearchBar from '../../../Search/SearchBar';
 import { useHistory, Link } from 'react-router-dom';
 
 export default function FilterWFH() {
@@ -26,16 +25,6 @@ export default function FilterWFH() {
 
       return (
         <section className="section-card2">
-        <div align='center' >
-        <SearchBar>
-        <input type="Search" 
-            placeholder="Search Internship" 
-        />
-        </SearchBar>
-        <button>
-         Search
-        </button>  
-        </div>
         <ButtonFi/>
         <div className='card2'>
         {Object.keys(data).map((item, i) => (
